@@ -1,0 +1,48 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  // output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Users {
+  id         String   @id @default(uuid())
+  email      String   @unique @db.VarChar()
+  username   String   @unique @db.VarChar()
+  password   String   @db.VarChar()
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@map("users")
+}
+
+model Checklists {
+  id         String           @id @default(uuid())
+  name       String           @db.VarChar()
+  created_at DateTime         @default(now())
+  updated_at DateTime         @updatedAt
+  items      ChecklistItems[]
+
+  @@map("checklists")
+}
+
+model ChecklistItems {
+  id           String     @id @default(uuid())
+  checklist_id String     @db.VarChar()
+  checklist    Checklists @relation(fields: [checklist_id], references: [id], onDelete: Cascade)
+  name         String     @db.VarChar()
+  status       Boolean    @default(false)
+  created_at   DateTime   @default(now())
+  updated_at   DateTime   @updatedAt
+
+  @@map("checklist_items")
+}

@@ -1,0 +1,389 @@
+{
+	"info": {
+		"_postman_id": "633a9c6f-62df-4a0b-b572-31b14dec4f92",
+		"name": "bts-tech-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10726227"
+	},
+	"item": [
+		{
+			"name": "Register user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"sysafarila@mail.com\",\r\n    \"password\": \"password\",\r\n    \"username\": \"sysafarila\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\": \"password\",\r\n    \"username\": \"sysafarila\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all checklist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN5c2FmYXJpbGEiLCJpYXQiOjE3NDU5MTY1MDksImV4cCI6MTc0NTkzODEwOX0.mgZXLGmfNpYxNIeaefXQwABRpakLs-O0qTG8128YYHs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/checklist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"checklist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create checklist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN5c2FmYXJpbGEiLCJpYXQiOjE3NDU5MTY1MDksImV4cCI6MTc0NTkzODEwOX0.mgZXLGmfNpYxNIeaefXQwABRpakLs-O0qTG8128YYHs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"my checklist\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/checklist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"checklist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete checklist by ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN5c2FmYXJpbGEiLCJpYXQiOjE3NDU5MTY1MDksImV4cCI6MTc0NTkzODEwOX0.mgZXLGmfNpYxNIeaefXQwABRpakLs-O0qTG8128YYHs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/checklist/57bccddc-6889-46fd-b0e1-5e3ceeb60c32",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"checklist",
+						"57bccddc-6889-46fd-b0e1-5e3ceeb60c32"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all checklist item by checklist ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN5c2FmYXJpbGEiLCJpYXQiOjE3NDU5MTY1MDksImV4cCI6MTc0NTkzODEwOX0.mgZXLGmfNpYxNIeaefXQwABRpakLs-O0qTG8128YYHs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/checklist/d0e6ae8e-3938-4527-9daf-bc18ce795e43/item",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"checklist",
+						"d0e6ae8e-3938-4527-9daf-bc18ce795e43",
+						"item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new checklist item in checklist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN5c2FmYXJpbGEiLCJpYXQiOjE3NDU5MTY1MDksImV4cCI6MTc0NTkzODEwOX0.mgZXLGmfNpYxNIeaefXQwABRpakLs-O0qTG8128YYHs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"itemName\": \"Item checklist\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/checklist/d0e6ae8e-3938-4527-9daf-bc18ce795e43/item",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"checklist",
+						"d0e6ae8e-3938-4527-9daf-bc18ce795e43",
+						"item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get checklist item in checklist by checklist ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN5c2FmYXJpbGEiLCJpYXQiOjE3NDU5MTY1MDksImV4cCI6MTc0NTkzODEwOX0.mgZXLGmfNpYxNIeaefXQwABRpakLs-O0qTG8128YYHs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/checklist/d0e6ae8e-3938-4527-9daf-bc18ce795e43/item/a956dece-c14e-4e3b-aadd-033f5609f419",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"checklist",
+						"d0e6ae8e-3938-4527-9daf-bc18ce795e43",
+						"item",
+						"a956dece-c14e-4e3b-aadd-033f5609f419"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update status checklist item by checklist item id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN5c2FmYXJpbGEiLCJpYXQiOjE3NDU5MTY1MDksImV4cCI6MTc0NTkzODEwOX0.mgZXLGmfNpYxNIeaefXQwABRpakLs-O0qTG8128YYHs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/checklist/d0e6ae8e-3938-4527-9daf-bc18ce795e43/item/a956dece-c14e-4e3b-aadd-033f5609f419",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"checklist",
+						"d0e6ae8e-3938-4527-9daf-bc18ce795e43",
+						"item",
+						"a956dece-c14e-4e3b-aadd-033f5609f419"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete item by checklist item ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN5c2FmYXJpbGEiLCJpYXQiOjE3NDU5MTY1MDksImV4cCI6MTc0NTkzODEwOX0.mgZXLGmfNpYxNIeaefXQwABRpakLs-O0qTG8128YYHs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/checklist/d0e6ae8e-3938-4527-9daf-bc18ce795e43/item/a956dece-c14e-4e3b-aadd-033f5609f419",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"checklist",
+						"d0e6ae8e-3938-4527-9daf-bc18ce795e43",
+						"item",
+						"a956dece-c14e-4e3b-aadd-033f5609f419"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rename item by checklist item ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN5c2FmYXJpbGEiLCJpYXQiOjE3NDU5MTY1MDksImV4cCI6MTc0NTkzODEwOX0.mgZXLGmfNpYxNIeaefXQwABRpakLs-O0qTG8128YYHs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"itemName\": \"new item checklist\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/checklist/d0e6ae8e-3938-4527-9daf-bc18ce795e43/item/rename/d8f810d0-c912-42e2-b26e-b24f22f052c1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"checklist",
+						"d0e6ae8e-3938-4527-9daf-bc18ce795e43",
+						"item",
+						"rename",
+						"d8f810d0-c912-42e2-b26e-b24f22f052c1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
